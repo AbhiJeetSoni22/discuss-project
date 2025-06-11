@@ -8,7 +8,7 @@ import { Button } from './ui/button';
 import { LogOut } from 'lucide-react';
 const AuthHeader = () => {
     const session = useSession();
-    if(!session?.data?.user){
+    if(session.status === "loading"){
         return <></>; // If no user data, return empty fragment
     }
    let authContext : React.ReactNode;
